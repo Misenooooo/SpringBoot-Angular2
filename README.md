@@ -1,8 +1,8 @@
 # SpringBoot+Angular2
 
 ## Built with this example 
-..* https://blog.jdriven.com/2016/12/angular2-spring-boot-getting-started/
-..* https://github.com/jbruinink/ng2boot
+* https://blog.jdriven.com/2016/12/angular2-spring-boot-getting-started/
+* https://github.com/jbruinink/ng2boot
 
 ## Frontend 
 1. buid using Angular cli 
