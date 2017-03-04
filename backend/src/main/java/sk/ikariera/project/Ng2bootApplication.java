@@ -1,4 +1,4 @@
-package com.jdriven.ng2boot;
+package sk.ikariera.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

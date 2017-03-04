@@ -6,10 +6,10 @@
 	<artifactId>backend</artifactId>
 
 	<name>backend</name>
-	<description>The ng2boot backend project</description>
+	<description>The ikariera backend project</description>
 
 	<parent>
-		<groupId>com.jdriven.ng2boot</groupId>
+		<groupId>sk.ikariera.project</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -27,7 +27,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.jdriven.ng2boot</groupId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>sk.ikariera.project</groupId>
 			<artifactId>frontend</artifactId>
 			<version>${project.version}</version>
 			<scope>runtime</scope>
