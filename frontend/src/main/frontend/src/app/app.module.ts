@@ -3,20 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HomeComponent} from  './components/home/home.component';
+import {AppComponent} from './app.component';
+import {RegisterComponent} from "./components/register/register.component";
+
+import {RegisterService} from "./services/register.service";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
