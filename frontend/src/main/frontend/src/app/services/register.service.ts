@@ -5,14 +5,23 @@ import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import {Observable} from 'rxjs/Observable'; /*TODO add me*/
 
+
 @Injectable()
-export class RegisterService {
+export class HttpService {
   constructor (private http: Http) {}
 
-  sendRegistration(something:string){
-      let url = "http://localhost:8080/user/register"; /*TODO move this to config*/
+  post(controller:string, action:string, data:any){
+      let url = "http://localhost:8080/"+controller+"/"+action; /*TODO move this to config*/
       let headers = new Headers({'Content-Type':'application/json'});
-      return this.http.post(url,JSON.stringify(something), {headers:headers})
+      return this.http.post(url,JSON.stringify(data), {headers:headers});
   }
+
+  get(controller:string, action:string){
+    let url = "http://localhost:8080/"+controller+"/"+action; /*TODO move this to config*/
+    let headers = new Headers({'Content-Type':'application/json'});
+    return this.http.get(url, {headers:headers});
+
+  }
+
 
 }
