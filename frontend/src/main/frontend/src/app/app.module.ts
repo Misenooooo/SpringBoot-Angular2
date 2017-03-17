@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {RegisterComponent} from "./components/register/register.component";
 
 import {HttpService} from "./services/register.service";
+import {TranslateModule} from "../../node_modules/ng2-translate"
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {HttpService} from "./services/register.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule.forRoot()
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
