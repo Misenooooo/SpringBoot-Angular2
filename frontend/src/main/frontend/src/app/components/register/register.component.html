@@ -1,27 +1,27 @@
 <form (ngSubmit)="registerNewUser()" [formGroup]="registerForm" >
   <div class="form-group">
-    <label>First name:</label>
+    <label>{{this.messages.messages[0].value}}</label>
     <div *ngIf="submitAttempt">
       <p *ngIf="registerForm.controls.firstNameField.hasError('required')">Required</p>
     </div>
     <input type="text" class="form-control" [(ngModel)]="newUser.firstName" name="firstNameField" formControlName="firstNameField">
   </div>
   <div class="form-group">
-    <label>Last name:</label>
+    <label>{{this.messages.messages[1].value}}</label>
     <div *ngIf="submitAttempt">
       <p *ngIf="registerForm.controls.lastNameField.hasError('required')">Required</p>
     </div>
     <input type="text" class="form-control" [(ngModel)]="newUser.lastName" name="lastNameField" formControlName="lastNameField">
   </div>
   <div class="form-group">
-    <label>User name(email):</label>
+    <label>{{this.messages.messages[2].value}}</label>
     <div *ngIf="submitAttempt">
       <p *ngIf="registerForm.controls.emailField.hasError('required')">Required</p>
     </div>
     <input type="email" class="form-control" [(ngModel)]="newUser.email" name="emailField" formControlName="emailField">
   </div>
   <div class="form-group">
-    <label>Password:</label>
+    <label>{{this.messages.messages[3].value}}</label>
     <div *ngIf="submitAttempt">
       <p *ngIf="registerForm.controls.passwordField.hasError('required')">Required</p>
       <p *ngIf="registerForm.hasError('mismatchedPasswords')">Password mismatch</p>
@@ -29,7 +29,7 @@
     <input type="password" class="form-control" [(ngModel)]="newUser.password" name="passwordField" formControlName="passwordField">
   </div>
   <div class="form-group">
-    <label>Password repeat:</label>
+    <label>{{this.messages.messages[4].value}}</label>
     <div *ngIf="submitAttempt">
       <p *ngIf="registerForm.controls.passwordRepeatField.hasError('required')">Required</p>
       <p *ngIf="registerForm.hasError('mismatchedPasswords')">Password mismatch</p>
@@ -38,3 +38,4 @@
   </div>
   <button type="submit" class="btn btn-primary" >Register</button>
 </form>
+<button type="button" (click)="testMessage()" class="btn btn-primary">Test </button>

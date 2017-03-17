@@ -4,6 +4,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 
 import {User} from "./model/User";
 import {passwordMatchValidator} from "../../util/validators";
+import {Messages} from "./messages/Messages";
 
 @Component({
   selector: 'home',
@@ -19,7 +20,11 @@ export class RegisterComponent implements OnInit{
 
   constructor(private httpService: HttpService){}
 
+  messages:Messages = new Messages(this.httpService);
+
   ngOnInit(): void {
+    this.messages.init();
+    this.messages.translate();
     this.registerForm = new FormGroup({
       firstNameField: new FormControl('',Validators.required),
       lastNameField: new FormControl('',Validators.required),
@@ -30,9 +35,21 @@ export class RegisterComponent implements OnInit{
   }
 
 
+  testMessage: String = "app.title";
+
+  testMessage(){
+    this.httpService.post('message','load',this.testMessage)
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        })
+  }
+
   registerNewUser(){ /*TODO add backend validation errors, add success message, ---done--- add frontend validation */
     console.log("Registration form submitted.");
-
     if (!this.registerForm.valid){
         this.submitAttempt = true;
         return;
